@@ -1,0 +1,36 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #161616;
+  border-radius: 5px;
+  padding: 25px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+img {
+  border-radius: 10EM;
+  border-style: solid;
+  border-color: whitesmoke;
+  height: 180px;
+  width: 180px;
+}
+
+b {
+  color: whitesmoke;
+}
+
+h1 {
+  color: whitesmoke;
+}
+
+p {
+  color: whitesmoke;
+}
