@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+h1 {
+  font-family: "Fredoka One";
+  font-size: 72px;
+  background: -webkit-linear-gradient(
+    rgb(254, 255, 255) 50%,
+    rgb(65, 63, 63) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

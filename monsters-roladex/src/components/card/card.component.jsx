@@ -13,9 +13,7 @@ export const Card = props => (
       />
     </div>
     <div className="card-info">
-      <h1>
-        {props.hero.localized_name}
-      </h1>
+      <h2>{props.hero.localized_name}</h2>
     </div>
   </div>
 );

@@ -1,14 +1,18 @@
 import React, { Component } from "react";
 import "./App.css";
-import {CardList} from './components/card-list/card-list.component';
+import { CardList } from "./components/card-list/card-list.component";
+import { SearchBox } from "./components/search-box/search.component";
 
 class App extends Component {
   constructor() {
     super();
 
     this.state = {
-      heroes: []
+      heroes: [],
+      searchField: ""
     };
+
+    //this.handleChange = this.handleChange.bind(this); sem arrow function
   }
 
   componentDidMount() {
@@ -17,11 +21,26 @@ class App extends Component {
       .then(heroes => this.setState({ heroes: heroes.slice(0, 9) }));
   }
 
+  handleChange = e => {
+    this.setState({ searchField: e.target.value });
+  };
+
   render() {
+    const { heroes, searchField } = this.state;
+    const filteredHeroes = heroes.filter(hero =>
+      hero.localized_name
+        .toLowerCase()
+        .includes(searchField.toLocaleLowerCase())
+    );
+
     return (
       <div className="App">
-      <CardList heroes={this.state.heroes}>
-      </CardList>
+      <h1>Dota 2 Heroes</h1>
+        <SearchBox
+          placeholder="search dota 2 heroes"
+          handleChange={this.handleChange}
+        ></SearchBox>
+        <CardList heroes={filteredHeroes}></CardList>
       </div>
     );
   }
