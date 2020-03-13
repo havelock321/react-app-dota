@@ -14,7 +14,7 @@ class App extends Component {
   componentDidMount() {
     fetch("https://api.opendota.com/api/heroes")
       .then(response => response.json())
-      .then(heroes => this.setState({ heroes: heroes }));
+      .then(heroes => this.setState({ heroes: heroes.slice(0, 9) }));
   }
 
   render() {
